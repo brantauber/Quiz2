@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self.mainLabel setText:[NSString stringWithFormat:@"%1.2f", [self.slider value]]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,4 +27,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)valueChanged:(id)sender {
+    float choice = [self.slider value];
+    NSString *labelText = [NSString stringWithFormat:@"%1.2f", choice];
+    [self.mainLabel setText: labelText];
+}
 @end
